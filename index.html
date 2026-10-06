@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Budget</title>
+  <meta name="description" content="Suivi de dépenses et budgets mensuels">
+  <meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Budget">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="prevMonth" aria-label="Mois précédent">‹</button>
+    <button class="month-title" id="monthTitle" aria-label="Revenir au mois en cours"></button>
+    <button class="icon-btn" id="nextMonth" aria-label="Mois suivant">›</button>
+    <span class="sync" id="syncState" aria-live="polite"></span>
+  </header>
+
+  <main id="view" tabindex="-1"></main>
+
+  <button class="fab" id="addBtn" aria-label="Ajouter une opération">+</button>
+
+  <nav class="tabbar" aria-label="Navigation">
+    <button data-tab="mois" class="active"><span>◔</span>Mois</button>
+    <button data-tab="historique"><span>☰</span>Historique</button>
+    <button data-tab="stats"><span>▥</span>Stats</button>
+    <button data-tab="reglages"><span>⚙</span>Réglages</button>
+  </nav>
+
+  <dialog id="sheet" class="sheet"></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="tooltip" id="tooltip" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
